@@ -66,7 +66,7 @@ impl Error for EstablishError {
 
 impl fmt::Display for EstablishError {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "{}", self.description())
+        write!(f, "{}", self.to_string())
     }
 }
 
@@ -101,7 +101,7 @@ impl Error for MessageError {
 
 impl fmt::Display for MessageError {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "{}", self.description())
+        write!(f, "{}", self.to_string())
     }
 }
 
