@@ -242,6 +242,9 @@ pub struct Node {
     /// Whether this container is currently focused.
     pub focused: bool,
 
+    /// Marks applied to this container
+    pub marks: Vec<String>,
+
     // sway-specific
 
     /// App id for wayland applications (sway only)

@@ -93,6 +93,16 @@ pub fn build_tree(val: &json::Value) -> reply::Node {
         urgent: val.get("urgent").unwrap().as_bool().unwrap(),
         focused: val.get("focused").unwrap().as_bool().unwrap(),
 
+        marks: match val.get("marks") {
+            Some(ms) => ms
+                .as_array()
+                .unwrap()
+                .iter()
+                .map(|n| n.as_str().unwrap().to_string())
+                .collect(),
+            None => vec![],
+        },
+
         // sway-specific fields
 
         #[cfg(feature = "sway-1-1")]
